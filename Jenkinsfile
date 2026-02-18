@@ -12,6 +12,7 @@ pipeline{
 
     stage('Run Script'){
       steps{
+        sh 'sed -i -e "s/\r$//" script.sh'
         sh 'chmod +x script.sh'
         sh './script.sh'
       }
